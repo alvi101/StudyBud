@@ -1,0 +1,32 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+    <style>
+        .home-container{
+            display:grid;
+            grid-template-columns: 1fr 3fr 1fr;
+        }
+    </style>
+
+    <div class="home-container">
+
+        <div class="topic-container">
+        {% include "base/topics_component.html" %}
+        </div>
+
+        <div style="padding: 0px 30px" class="feed-col">
+        <h2>All Rooms</h2>
+        <h4>{{room_count}} rooms found</h4>
+
+        {% include "base/feed_component.html" %}
+
+        </div>
+
+        <div class="activity-feed">
+         {% include "base/activity_component.html" %}
+        </div>
+
+    </div>
+
+{% endblock content %}
